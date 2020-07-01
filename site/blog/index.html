@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Blog - Syndrega</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">Syndrega</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Home</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">Blog</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="..">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="disabled">
+                                <a rel="prev" >
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#blog">Blog</a></li>
+            <li><a href="#benchmarking-moodlebox-on-different-raspberry-pi-models">Benchmarking MoodleBox on different Raspberry Pi models</a></li>
+            <li><a href="#php-and-dbms-compatibility-of-major-moodle-releases">PHP and DBMS compatibility of major Moodle releases</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="blog">Blog</h1>
+<h2 id="benchmarking-moodlebox-on-different-raspberry-pi-models">Benchmarking MoodleBox on different Raspberry Pi models</h2>
+<p>Raspbian version : Raspbian GNU/Linux 10 (buster)</p>
+<p>Moodle release : 3.8 (Build: 20191118)</p>
+<p>MoodleBox version : 3.5.0 (2019-11-18)</p>
+<p>MoodleBox plugin version : 2.4.2 (2019100700)</p>
+<p>Kernel version : Linux 4.19.75-v7l armv7l</p>
+<p>Moodle Benchmark plug-in version : v1.3.0 (2019083101)</p>
+<p>SD card : SanDisk Ultra 16GB microSDHC I</p>
+<table>
+<thead>
+<tr>
+<th align="center">#</th>
+<th>Item</th>
+<th align="right">Accpt. limit</th>
+<th align="right">Crit. limit</th>
+<th align="right">RPi 3A+</th>
+<th align="right">RPi 3B</th>
+<th align="right">RPi 3B+</th>
+<th align="right">RPi 4B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td>Moodle loading time</td>
+<td align="right">0.5</td>
+<td align="right">0.8</td>
+<td align="right">0.020</td>
+<td align="right">0.022</td>
+<td align="right">0.024</td>
+<td align="right">0.025</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td>Processor processing speed</td>
+<td align="right">0.5</td>
+<td align="right">0.8</td>
+<td align="right">0.644</td>
+<td align="right">0.751</td>
+<td align="right">0.644</td>
+<td align="right">0.963</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td>Reading file performance</td>
+<td align="right">0.5</td>
+<td align="right">0.8</td>
+<td align="right">0.045</td>
+<td align="right">0.051</td>
+<td align="right">0.044</td>
+<td align="right">0.046</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td>Writing file performance</td>
+<td align="right">1.0</td>
+<td align="right">1.25</td>
+<td align="right">0.206</td>
+<td align="right">0.240</td>
+<td align="right">0.204</td>
+<td align="right">0.201</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td>Reading course performance</td>
+<td align="right">0.75</td>
+<td align="right">1.0</td>
+<td align="right">0.114</td>
+<td align="right">0.147</td>
+<td align="right">0.127</td>
+<td align="right">0.077</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td>Writing course performance</td>
+<td align="right">1.0</td>
+<td align="right">1.25</td>
+<td align="right">0.109</td>
+<td align="right">0.119</td>
+<td align="right">0.123</td>
+<td align="right">0.068</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td>Database performance (#1)</td>
+<td align="right">0.5</td>
+<td align="right">0.7</td>
+<td align="right">0.021</td>
+<td align="right">0.025</td>
+<td align="right">0.025</td>
+<td align="right">0.015</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td>Database performance (#2)</td>
+<td align="right">0.3</td>
+<td align="right">0.5</td>
+<td align="right">0.047</td>
+<td align="right">0.059</td>
+<td align="right">0.048</td>
+<td align="right">0.033</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td>Login time performance</td>
+<td align="right">0.3</td>
+<td align="right">0.8</td>
+<td align="right">0.109</td>
+<td align="right">0.007</td>
+<td align="right">0.016</td>
+<td align="right">0.080</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td>Login time performance</td>
+<td align="right">0.3</td>
+<td align="right">0.8</td>
+<td align="right">0.158</td>
+<td align="right">0.016</td>
+<td align="right">0.018</td>
+<td align="right">0.096</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Total time</td>
+<td align="right">5.65</td>
+<td align="right">6.7</td>
+<td align="right">1.473</td>
+<td align="right">1.437</td>
+<td align="right">1.273</td>
+<td align="right">1.628</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Score (points)</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right">148</td>
+<td align="right">144</td>
+<td align="right">128</td>
+<td align="right">161</td>
+</tr>
+</tbody>
+</table>
+<p>In all three cases the following warning was printed:</p>
+<p>Watch out!
+Your Moodle performance is not optimal.</p>
+<p>The processor seems too slow.
+Check that your hardware configuration is high enough to run Moodle.</p>
+<table>
+<thead>
+<tr>
+<th align="center">#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td>Moodle loading time</td>
+<td>Load the "config.php" configuration file</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td>Processor processing speed</td>
+<td>Call a PHP function with a loop to check the processor speed</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td>Reading file performance</td>
+<td>Read a file multiple times to check the reading speed of the Moodle temporary folder</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td>Writing file performance</td>
+<td>Write a file multiple times to check the writing speed of the Moodle temporary folder</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td>Reading course performance</td>
+<td>Read a course multiple times to check the reading speed of the database</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td>Writing course performance</td>
+<td>Write a course multiple times to check the writing speed of the database</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td>Database performance (#1)</td>
+<td>Run a complex SQL query to check the speed of the database</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td>Database performance (#2)</td>
+<td>Run a complex SQL query to check the speed of the database</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td>Login time performance</td>
+<td>for the guest account Check the loading time of the guest account login page</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td>Login time performance</td>
+<td>for a fake user account Check the loading time of a fake user account login page</td>
+</tr>
+</tbody>
+</table>
+<p>(Last edited 2020-05-14 18:58 UTC)</p>
+<h2 id="php-and-dbms-compatibility-of-major-moodle-releases">PHP and DBMS compatibility of major Moodle releases</h2>
+<p>In Moodle community forums we get a non-ending stream of requests from people having trouble in marching old Moodle installations to newer and supported realeases. Things break easily since along the line the system requirements have been evolving too. The following table summarizes their dependencies.</p>
+<table>
+<thead>
+<tr>
+<th>Release</th>
+<th>Earliest from</th>
+<th>PHP min.</th>
+<th>PHP max.</th>
+<th>MySQL min.</th>
+<th>MySQL max.</th>
+<th>PgSQL min.</th>
+<th>MariaDB min.</th>
+<th>MariaDB max</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.moodle.org/dev/Moodle_1.6_release_notes">1.6</a> <sup>[1]</sup></td>
+<td>1.0</td>
+<td>4.3.0</td>
+<td>5.6</td>
+<td>4.1.16</td>
+<td>?</td>
+<td>8.0</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://docs.moodle.org/dev/Moodle_1.9_release_notes">1.9</a> <sup>[2]</sup></td>
+<td>1.6</td>
+<td>4.3.0</td>
+<td>5.6</td>
+<td>4.1.16</td>
+<td>?</td>
+<td>8.0</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://docs.moodle.org/dev/Moodle_2.2_release_notes">2.2</a> <sup>[3]</sup></td>
+<td>1.9</td>
+<td>5.3.2</td>
+<td>5.6</td>
+<td>5.0.25</td>
+<td>?</td>
+<td>8.3</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://docs.moodle.org/dev/Moodle_2.7_release_notes">2.7</a> (LTS)</td>
+<td>2.2</td>
+<td>5.4.4</td>
+<td>5.6</td>
+<td>5.5.31</td>
+<td>?</td>
+<td>9.1</td>
+<td>5.5.31</td>
+<td>10.2</td>
+</tr>
+<tr>
+<td><a href="https://docs.moodle.org/dev/Moodle_3.1_release_notes">3.1</a> (LTS)</td>
+<td>2.7</td>
+<td>5.4.4</td>
+<td>7.0</td>
+<td>5.5.31</td>
+<td>5.7</td>
+<td>9.1</td>
+<td>5.5.31</td>
+<td>10.2</td>
+</tr>
+<tr>
+<td><a href="https://docs.moodle.org/dev/Moodle_3.2_release_notes">3.2</a></td>
+<td>2.7</td>
+<td>5.6.5</td>
+<td>7.1</td>
+<td>5.5.31</td>
+<td>5.7</td>
+<td>9.1</td>
+<td>5.5.31</td>
+<td>10.2</td>
+</tr>
+<tr>
+<td><a href="https://docs.moodle.org/dev/Moodle_3.5_release_notes">3.5</a> (LTS)</td>
+<td>3.1</td>
+<td>7.0.0</td>
+<td>7.2</td>
+<td>5.5.31</td>
+<td>8.0</td>
+<td>9.3</td>
+<td>5.5.31</td>
+<td>10.5</td>
+</tr>
+<tr>
+<td><a href="https://docs.moodle.org/dev/Moodle_3.7_release_notes">3.7</a></td>
+<td>3.2</td>
+<td>7.1.0</td>
+<td>7.3</td>
+<td>5.6</td>
+<td>8.0</td>
+<td>9.4</td>
+<td>10.0?</td>
+<td>10.5</td>
+</tr>
+<tr>
+<td><a href="https://docs.moodle.org/dev/Moodle_3.8_release_notes">3.8</a></td>
+<td>3.2</td>
+<td>7.1.0</td>
+<td>7.3 <sup>[4]</sup></td>
+<td>5.6</td>
+<td>8.0</td>
+<td>9.4</td>
+<td>10.0?</td>
+<td>10.5</td>
+</tr>
+<tr>
+<td><a href="https://docs.moodle.org/dev/Moodle_3.9_release_notes">3.9</a>&nbsp;(LTS)</td>
+<td>3.5</td>
+<td>7.2.0</td>
+<td>7.4</td>
+<td>5.6</td>
+<td>8.0</td>
+<td>9.4</td>
+<td>10.2.29</td>
+<td>10.5</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>Release 1.6 was a de-facto LTS, supported for 3 years</p>
+</li>
+<li>
+<p>Release 1.9 was a de-facto LTS, supported for 6 years</p>
+</li>
+<li>
+<p>Upgrade from 1.9 to 2.x broke so many things, it is advisable to rebuild the courses from scratch (making use of the numerous features of Moodle 2 and 3).</p>
+</li>
+<li>
+<p>PHP 7.4 since release 3.8.3 (6 May 2020)</p>
+</li>
+</ol>
+<p>(Last edited 2020-06-27 08:30 UTC)</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

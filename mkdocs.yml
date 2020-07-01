@@ -1,0 +1,5 @@
+site_name: Syndrega
+nav:
+        - index.md
+        - blog.md
+theme: mkdocs
